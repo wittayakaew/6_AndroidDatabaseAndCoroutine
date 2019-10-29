@@ -52,7 +52,7 @@ class SleepQualityViewModel(
             _navigateToSleepTracker.value = true
         }
     }
-
+//oncreate
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()
