@@ -112,7 +112,7 @@ class SleepTrackerViewModel(
             database.update(night)
         }
     }
-
+// on create
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()

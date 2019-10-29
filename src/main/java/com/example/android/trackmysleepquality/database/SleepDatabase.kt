@@ -34,17 +34,17 @@ abstract class  SleepDatabase : RoomDatabase(){
             synchronized(this){
                 var instance = INSTANCE
 
-//                if(instance == null){
-//                    instance = Room.databaseBuilder(
-//                            context.applicationContext,
-//                            SleepDatabase::class.java,
-//                            "sleep_history_database"
-//                    )
-//                            .fallbackToDestructiveMigration()
-//                            .build()
-//                    INSTANCE = instance
-//                }
-//                return instance
+                if(instance == null){
+                    instance = Room.databaseBuilder(
+                            context.applicationContext,
+                            SleepDatabase::class.java,
+                            "sleep_history_database"
+                    )
+                            .fallbackToDestructiveMigration()
+                            .build()
+                    INSTANCE = instance
+                }
+                return instance
             }
         }
     }
