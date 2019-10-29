@@ -59,3 +59,9 @@ class SleepQualityViewModel(
     }
 
 }
+
+//private val _navigateToSleepTracker = MutableLiveData<Boolean?>()
+//
+//val navigateToSleepTracker: LiveData<Boolean?>
+//    get() = _navigateToSleepTracker
+
