@@ -73,15 +73,7 @@ class SleepTrackerViewModel(
         }
     }
 
-    private suspend fun getTonightFromDatabase(): SleepNight? {
-        return withContext(Dispatchers.IO) {
-            var night = database.getTonight()
-            if (night?.endTimeMilli != night?.startTimeMilli) {
-                night = null
-            }
-            night
-        }
-    }
+
 
     fun onStartTracking(){
         uiScope.launch {
@@ -133,6 +125,15 @@ class SleepTrackerViewModel(
 
     fun doneNavigating() {
         _navigateToSleepQuality.value = null
+    }
+    private suspend fun getTonightFromDatabase(): SleepNight? {
+        return withContext(Dispatchers.IO) {
+            var night = database.getTonight()
+            if (night?.endTimeMilli != night?.startTimeMilli) {
+                night = null
+            }
+            night
+        }
     }
 }
 
